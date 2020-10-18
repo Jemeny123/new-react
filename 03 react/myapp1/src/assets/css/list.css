@@ -1,0 +1,27 @@
+#con div {
+  width: 50px;
+  height: 50px;
+  background: lightcoral;
+  margin: 0 auto;
+  display: none;
+}
+
+#con .show {
+  display: block;
+}
+
+.movebox {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+  position: absolute;
+}
+
+.greenf2 {
+  color: lime;
+}
+
+.mycolor {
+  color: red;
+  background: yellow;
+}

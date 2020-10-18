@@ -1,0 +1,31 @@
+{
+  "name": "H52002",
+  "version": "1.0.0",
+  "description": "代码存放",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/shirley3790/H52002.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.5",
+    "iconv-lite": "^0.6.2",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mockjs": "^1.1.0",
+    "mongodb": "^3.5.9",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "ws": "^7.3.1"
+  }
+}

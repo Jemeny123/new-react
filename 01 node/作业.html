@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    作业1：2020-07-06 周一
+
+    1、安装node和postman、supervisor、body-parser
+    2、自己写接口，测试接口
+        用户管理：
+            * 验证用户是否存在：存在就不给注册
+            * 注册
+            * 登陆：生成token
+            * 查询gid叫xx的用户
+            * 修改密码
+            * 删除gid为xx的用户
+            * 查询所有的用户
+    3、实现自己的接口给你的那个他使用：设置防火墙
+    4、完善jq的项目
+
+    共性问题：遇到错误要淡定，总结错误
+
+    1、服务器没打开，就用postman测试了。supervisor server.js
+    2、路径写错：
+        接口：/user/checkname  开启端口：8888
+        访问：http://localhost:8888/user/checkname
+        http://localhost:8888/checkname 错误
+        ./user/checkname 错误，多了一个点，必须写绝对路径，用来做路由的(前端发起请求，我们可以根据路径的不同切换不同的功能分支)
+    3、参数接收错误：
+        * get方式：前端：用params传参；后端：req.query;
+        * post、put、delete:前端：用body传参(x-www-form-urlencoded);后端接收：req.body(安装body-parser)
+        * 动态路由方式: 前端：http://localhost:8888/user/6  后端：路径：/user/:id,接收：req.params {id:6}
+    4、解构失败
+        * 前端和后端解构名字不一致；解构失败 前端：params ： name:高圆圆
+        * let { username } = req.query; 错误的写法
+        *  let { name } = req.query; 正确的写法
+    5、端口号设置了防火墙还是不能访问:端口号冲突；ip地址错了
+
+    作业2：2020-7-7
+
+    1、申请阿里云服务器；
+    2、部署二阶段php项目；
+    3、部署昨天写的node接口，并开放端口，本地用postman测试接口。
+    4、引入路由Router。安装数据库模块  npm i mysql
+    5、封装mysql方法，做数据的查询，实现用户管理模块接口
+        用户管理：
+            * 验证用户是否存在：存在就不给注册
+            * 注册
+            * 登陆
+            * 查询gid叫xx的用户
+            * 修改密码
+            * 删除gid为xx的用户
+            * 查询所有的用户
+    6、发布node接口到阿里云，用postman测试。
+
+    作业3：2020-7-8
+
+    1、用node写接口：
+        用户管理：
+            * 验证用户是否存在：存在就不给注册
+            * 注册
+            * 登陆:生成和校验token
+            * 查询gid叫xx的用户
+            * 修改密码
+            * 删除gid为xx的用户
+            * 查询所有的用户
+    2、加入码云仓库提交这几天的作业。
+    3、复习git指令，学会分支管理； json-导成csv(记事本方式打开换成utf-8)-导入数据库
+    4、完成电商管理系统的其他接口并发布到阿里云服务器
+
+        * 商品管理 goodsRouter.js
+            * 商品信息列表：分页
+            * 查询gid为xx的商品
+            * 修改gid为xx的商品信息
+            * 删除gid的商品
+            * 删除多个商品
+            * 新增商品
+
+        * 订单管理 ordersRouter.js
+            * 新增订单(购物车新增商品)
+            * 删除订单(购物车删除商品)
+            * 修改订单
+            * 查询订单列表(购物车多商铺数据查询)
+            * 查询某个订单
+
+    作业4：2020-7-9
+
+    1、安装mongoDB、robo
+    2、学会基本的mongoDB的增删改查语句
+    3、封装增删改查方法
+    4、导出方法，实现接口；
+    5、请实现多用户购物车功能:渲染、加减数量、删除单条，多条数据；
+    6、完成全套电商接口并发布到阿里云，本地能用ip调用接口数据：
+        用户管理：usersRouter.js
+            * 验证用户是否存在：存在就不给注册
+            * 注册
+            * 登陆:生成和校验token
+            * 查询gid叫xx的用户
+            * 修改密码
+            * 删除gid为xx的用户
+            * 查询所有的用户
+
+        * 商品管理 goodsRouter.js
+            * 商品信息列表：分页
+            * 查询gid为xx的商品
+            * 修改gid为xx的商品信息
+            * 删除gid的商品
+            * 删除多个商品
+            * 新增商品
+
+        * 订单管理 ordersRouter.js
+            * 新增订单(购物车新增商品)
+            * 删除订单(购物车删除商品)
+            * 修改订单
+            * 查询订单列表(购物车多商铺数据查询)
+            * 查询某个订单
+    */
+
+</script>
+
+</html>

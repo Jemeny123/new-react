@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>前端：8899端口</h1>
+    <input type="button" value="请求8800端口的数据" id="btn1"><br><br>
+    <input type="button" value="请求8800端口的数据-jsonp" id="btn2"><br><br>
+    <input type="button" value="请求8800端口的数据-cors" id="btn3"><br><br>
+    <input type="button" value="请求8800端口的数据-代理" id="btn4"><br><br>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    /*
+        -url组成：http://www.baidu.com:8888/list/pic.png?name=linqian&psw=111222#897
+
+            协议：http:// 默认端口:80  https:// 默认端口:443
+            子域名:www.
+            主域名：baidu.com
+            端口：8888
+            路径：list/pic.png
+            参数：name=linqian&psw=111222
+            哈希值:hash #897(单页面应用)
+
+        -同源策略:浏览器的默认的规定，只要协议、域名(子域名和主域名)、端口号任意一个不同，就属于不同域资源，基于安全考虑不同域的资源是不能相互访问的。
+
+        -需求：我就要别人的接口:支付宝、微信接口、地图接口、股票信息
+
+        -跨域：解决同源策略的限制。
+
+        -跨域方案:jsonp/cors/服务器代理
+
+    */
+    //No 'Access-Control-Allow-Origin'跨域
+    $('#btn1').click(() => {
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8800/data.json',
+            success(res) {
+                console.log(res);
+            }
+        })
+    })
+
+    //jsonp跨域:
+    $('#btn2').click(() => {
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8800/option/jsonp',
+            dataType: 'jsonp',//必须写成jsonp
+            jsonp: 'callback',//callback是和后端协商：行内一般callback或cb
+            success(res) {
+                console.log(res);
+            }
+        })
+    });
+
+    //cors跨域:
+    $('#btn3').click(() => {
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8800/option/cors',
+            success(res) {
+                console.log(res);
+            }
+        })
+    });
+
+    //服务器代理：
+    //https://m.weibo.cn/api/config/list
+    $('#btn4').click(() => {
+        $.ajax({
+            type: 'get',
+            url: 'https://m.weibo.cn/api/config/list',
+            success(res) {
+                console.log(res);
+            }
+        })
+    });
+
+</script>
+
+
+</html>

@@ -1,0 +1,18 @@
+.btn {
+  width: 80px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+}
+
+.cg-default {
+  background: lightsalmon;
+}
+
+.cg-primary {
+  background: lightseagreen;
+}
+
+.cg-danger {
+  background: palevioletred;
+}

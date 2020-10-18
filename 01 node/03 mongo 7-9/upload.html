@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传图片</title>
+</head>
+
+<body>
+    <!-- 上传单张图片 -->
+    <input type="file" id="file" name="touxiang">
+    <input type="button" value="上传头像" id="btn">
+    <br>
+    <br>
+    <br>
+    <hr>
+    <!-- 上传多个图片 multiple:上传多个图片要设置该属性-->
+    <input type="file" id="file2" name="goodimg" multiple>
+    <input type="button" value="上传商品" id="btn2">
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    (() => {
+        /*
+        FormData() H5新特性：发送数据给后端特别是文件的时候使用的
+            * new FormData() 实例化
+            * 方法
+                * set(key,value)
+                * append(key, value)
+                * get(key)
+                * has(key)
+                * getAll(key)
+                * delete(key)
+                * 
+                * https://www.jianshu.com/p/cc650075b33b
+    */
+        //自调用
+        $('#btn').click(() => {
+            let formdata = new FormData();//创建一个formdata对象
+            // console.log($('#file')[0].files[0]);
+            formdata.append('avatar', $('#file')[0].files[0]);//要上传的图片
+            formdata.append('_id', '5f07df9293af0022644eea01');//要上传的id
+            formdata.append('psw', '123456');
+            //发送ajax把需要的数据传给后端
+            $.ajax({
+                type: 'post',
+                url: '/upload/headphoto',
+                data: formdata,//要传输的数据
+                contentType: false,
+                processData: false,
+                success(res) {
+                    console.log(res);
+                }
+            })
+        });
+
+        //上传多个图片
+        $('#btn2').click(() => {
+            let arr = $('#file2')[0].files;//数组
+            let formdata = new FormData();
+            // arr.forEach(item => {
+            for (let i in arr) {
+                formdata.append('photos', arr[i]);
+            };
+            // console.log($('#file2'));
+            formdata.append('_id', '5f07e4daa3fbfb6e3cb17088');
+            $.ajax({
+                type: 'post',
+                url: '/upload/goodimg',
+                data: formdata,//要传输的数据
+                contentType: false,
+                processData: false,
+                success(res) {
+                    console.log(res, 999);
+                }
+            })
+        })
+    })();
+</script>
+
+</html>

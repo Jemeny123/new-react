@@ -1,0 +1,2 @@
+(this.webpackJsonpmyrouter=this.webpackJsonpmyrouter||[]).push([[5],{32:function(e,t,n){"use strict";n.r(t);var r=n(9),a=n(10),u=n(12),c=n(11),i=n(0),o=n.n(i),l=function(e){Object(u.a)(n,e);var t=Object(c.a)(n);function n(){return Object(r.a)(this,n),t.apply(this,arguments)}return Object(a.a)(n,[{key:"render",value:function(){return o.a.createElement("div",null,o.a.createElement("h2",null,"\u9996\u9875\u5185\u5bb9"))}}]),n}(o.a.Component);t.default=l}}]);
+//# sourceMappingURL=5.60f86a67.chunk.js.map
